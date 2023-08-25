@@ -14,13 +14,7 @@ def dev_check():
 
 def main():
     """entry point"""
-    #audition_rounds = determine_rounds()
-
     determine_rounds()
-    # if dev_check() is False:
-    #    txt_file = create_file(audition_rounds)
-    #    # print(txt_file)
-    #    print_action(txt_file)
 
 
 def number_of_excerpts(round_number):
@@ -34,8 +28,6 @@ def number_of_excerpts(round_number):
 
 def determine_rounds():
     """randomly determines the order of excerpts for each round"""
-
-    #selected_excerpts: List[str] = []
 
     rounds = int(input("How many rounds? "))
 
@@ -93,10 +85,7 @@ def determine_rounds():
 
         if dev_check() is False:
             txt_file = create_file("\n".join(selected_excerpts))
-            # print(txt_file)
             print_action(txt_file)
-
-    # return "\n".join(selected_excerpts)
 
 
 def create_file(audition_rounds):
