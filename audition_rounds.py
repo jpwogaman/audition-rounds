@@ -7,14 +7,17 @@ import os
 import win32api
 import win32print
 
+
 def main():
     """entry point"""
     rounds = int(input("How many rounds? "))
     determine_rounds(rounds)
 
+
 def dev_check():
     """print console if dev/true, print printer if prod/false"""
     return False
+
 
 def number_of_excerpts(round_number):
     """determines the number of excerpts in a given round, with more excerpts in later rounds"""
@@ -24,6 +27,7 @@ def number_of_excerpts(round_number):
     if 0 < round_number <= 3:
         return random.randint(5, 9)
     return random.randint(6, 12)
+
 
 def determine_rounds(rounds):
     """randomly determines the order of excerpts for each round, then prints them"""
@@ -76,6 +80,7 @@ def determine_rounds(rounds):
             txt_file = create_file("\n".join(selected_excerpts))
             print_action(txt_file)
 
+
 def create_file(audition_rounds):
     """creates a .txt file with the audition round information"""
 
@@ -84,6 +89,7 @@ def create_file(audition_rounds):
     with open(filename, "w", encoding='utf-8') as file:
         file.write(audition_rounds)
     return filename
+
 
 def print_action(txt_file):
     """actually prints the file"""
@@ -98,6 +104,7 @@ def print_action(txt_file):
     )
 
     os.remove(txt_file)
+
 
 if __name__ == "__main__":
     main()
