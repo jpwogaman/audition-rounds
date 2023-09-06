@@ -15,7 +15,7 @@ I've been running this in the [Anaconda](https://www.anaconda.com/) Powershell P
     ```
 
 2. ```
-    cd C:/path/to/audition-rounds    
+    cd audition-rounds    
     ```
 
 3. ```py 

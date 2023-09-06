@@ -2,6 +2,7 @@
 
 import random
 import tempfile
+import time
 from typing import List
 import os
 import win32api
@@ -79,6 +80,9 @@ def determine_rounds(rounds):
         else:
             txt_file = create_file("\n".join(selected_excerpts))
             print_action(txt_file)
+            # this is to prevent the temp file from being deleted before it's printed
+            time.sleep(1)
+            os.remove(txt_file)
 
 
 def create_file(audition_rounds):
@@ -102,8 +106,6 @@ def print_action(txt_file):
         ".",
         0
     )
-
-    os.remove(txt_file)
 
 
 if __name__ == "__main__":
